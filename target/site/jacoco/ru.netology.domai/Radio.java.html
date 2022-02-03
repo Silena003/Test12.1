@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Radio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Test12</a> &gt; <a href="index.source.html" class="el_package">ru.netology.domai</a> &gt; <span class="el_source">Radio.java</span></div><h1>Radio.java</h1><pre class="source lang-java linenums">package ru.netology.domai;
+
+public class Radio {
+<span class="pc" id="L4">    String name = &quot;Be52&quot;;</span>
+<span class="pc" id="L5">    private int currentRadioStation = 8;</span>
+<span class="pc" id="L6">    private int maxRadioStation = 9;</span>
+<span class="pc" id="L7">    private int minRadioStation = 0;</span>
+<span class="pc" id="L8">    private int currentVolume = 100;</span>
+<span class="pc" id="L9">    private int minCurrentVolume = 0;</span>
+<span class="pc" id="L10">    private int maxCurrentVolume = 100;</span>
+    boolean on;
+
+<span class="nc" id="L13">    public Radio() {</span>
+<span class="nc" id="L14">    }</span>
+
+<span class="fc" id="L16">    public Radio(int currentVolume, int minCurrentVolume, int maxCurrentVolume, boolean on) {</span>
+<span class="fc" id="L17">        this.currentVolume = currentVolume;</span>
+<span class="fc" id="L18">        this.minCurrentVolume = minCurrentVolume;</span>
+<span class="fc" id="L19">        this.maxCurrentVolume = maxCurrentVolume;</span>
+<span class="fc" id="L20">        this.on = on;</span>
+<span class="fc" id="L21">    }</span>
+
+    public String getName() {
+<span class="nc" id="L24">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L28">        this.name = name;</span>
+<span class="nc" id="L29">    }</span>
+
+    public int getCurrentRadioStation() {
+<span class="fc" id="L32">        return currentRadioStation;</span>
+    }
+
+    public void setCurrentRadioStation(int currentRadioStation) {
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (currentRadioStation &gt; maxRadioStation) {</span>
+<span class="nc" id="L37">            currentRadioStation = minRadioStation;</span>
+<span class="nc" id="L38">            return;</span>
+        }
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if (currentRadioStation &lt; minRadioStation) {</span>
+<span class="nc" id="L41">            currentRadioStation = maxRadioStation;</span>
+<span class="nc" id="L42">            return;</span>
+        }
+<span class="nc" id="L44">        this.currentRadioStation = currentRadioStation;</span>
+<span class="nc" id="L45">    }</span>
+
+    public int getMaxRadioStation() {
+<span class="nc" id="L48">        return maxRadioStation;</span>
+    }
+
+    public void setMaxRadioStation(int maxRadioStation) {
+<span class="nc" id="L52">        this.maxRadioStation = maxRadioStation;</span>
+<span class="nc" id="L53">    }</span>
+
+    public int getMinRadioStation() {
+<span class="nc" id="L56">        return minRadioStation;</span>
+    }
+
+    public void setMinRadioStation(int minRadioStation) {
+<span class="nc" id="L60">        this.minRadioStation = minRadioStation;</span>
+<span class="nc" id="L61">    }</span>
+
+    public int getCurrentVolume() {
+<span class="fc" id="L64">        return currentVolume;</span>
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+<span class="nc bnc" id="L68" title="All 2 branches missed.">        if (currentVolume &lt; maxCurrentVolume) {</span>
+<span class="nc" id="L69">            currentVolume++;</span>
+<span class="nc" id="L70">            return;</span>
+        }
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (currentVolume &gt; maxCurrentVolume) {</span>
+<span class="nc" id="L73">            return;</span>
+        }
+<span class="nc bnc" id="L75" title="All 2 branches missed.">        if (currentVolume &lt; minCurrentVolume) {</span>
+<span class="nc" id="L76">            return;</span>
+        }
+<span class="nc" id="L78">        this.currentVolume = currentVolume;</span>
+<span class="nc" id="L79">    }</span>
+
+    public int getMinCurrentVolume() {
+<span class="nc" id="L82">        return minCurrentVolume;</span>
+    }
+
+    public void setMinCurrentVolume(int minCurrentVolume) {
+<span class="nc" id="L86">        this.minCurrentVolume = minCurrentVolume;</span>
+
+<span class="nc" id="L88">    }</span>
+
+    public int getMaxCurrentVolume() {
+<span class="nc" id="L91">        return maxCurrentVolume;</span>
+    }
+
+    public void setMaxCurrentVolume(int maxCurrentVolume) {
+<span class="nc" id="L95">        this.maxCurrentVolume = maxCurrentVolume;</span>
+<span class="nc" id="L96">    }</span>
+
+    public boolean isOn() {
+<span class="nc" id="L99">        return on;</span>
+    }
+
+    public void setOn(boolean on) {
+<span class="nc" id="L103">        this.on = on;</span>
+<span class="nc" id="L104">    }</span>
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
